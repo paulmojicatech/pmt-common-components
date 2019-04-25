@@ -44,4 +44,14 @@ describe('CalendarComponent', () => {
     expect(weekBtn.length).toBe(1, 'Week button not found');
     expect(dayBtn.length).toBe(1, 'Day button not found');
   });
+  it('should update the button to disabled in calendar type select section', () => {
+    const selectDiv = el.querySelector('div.calendar-type-select');
+    const btns = selectDiv.querySelectorAll('button');
+    const monthBtn = Array.from(btns).filter(b => b.textContent == 'Month');
+    const dayBtn = Array.from(btns).filter(b => b.textContent == 'Day');
+    expect(monthBtn[0].hasAttribute('disabled')).toBeTruthy('Month should be default type');
+    dayBtn[0].click();
+    fixture.detectChanges();
+    expect(dayBtn[0].hasAttribute('disabled')).toBeTruthy('Day should be disabled after click');
+  });
 });
