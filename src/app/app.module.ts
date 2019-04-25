@@ -1,6 +1,8 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
+import { PmtCalendarModule } from '../pmtCalendar/calendar.module';
+
 import { AppComponent } from './app.component';
 
 @NgModule({
@@ -8,7 +10,8 @@ import { AppComponent } from './app.component';
     AppComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    PmtCalendarModule
   ],
   providers: [],
   bootstrap: [AppComponent]

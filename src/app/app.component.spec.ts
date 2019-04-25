@@ -1,31 +1,44 @@
-import { TestBed, async } from '@angular/core/testing';
+import { TestBed, async, ComponentFixture } from '@angular/core/testing';
+import { MatButtonModule } from '@angular/material';
+
+import { PmtCalendarModule } from '../pmtCalendar/calendar.module';
+
 import { AppComponent } from './app.component';
 
-describe('AppComponent', () => {
+fdescribe('AppComponent', () => {
+  let fixture:ComponentFixture<AppComponent>;
+  let el:HTMLElement;
+
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations: [
         AppComponent
       ],
+      imports: [
+        MatButtonModule,
+        PmtCalendarModule
+      ]
     }).compileComponents();
   }));
 
+  beforeEach(() => {
+    fixture = TestBed.createComponent(AppComponent);
+    el = fixture.debugElement.nativeElement;
+    fixture.detectChanges();
+  });
+
   it('should create the app', () => {
-    const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.debugElement.componentInstance;
     expect(app).toBeTruthy();
   });
 
-  it(`should have as title 'pmt-common-components'`, () => {
-    const fixture = TestBed.createComponent(AppComponent);
-    const app = fixture.debugElement.componentInstance;
-    expect(app.title).toEqual('pmt-common-components');
-  });
+  /* #region: Start Calendar Component Test */
 
-  it('should render title in a h1 tag', () => {
-    const fixture = TestBed.createComponent(AppComponent);
-    fixture.detectChanges();
-    const compiled = fixture.debugElement.nativeElement;
-    expect(compiled.querySelector('h1').textContent).toContain('Welcome to pmt-common-components!');
-  });
+  it('should contain the calendar component', () => {
+    const nativeCalendar = el.querySelectorAll('pmt-calendar');
+    expect(nativeCalendar.length).toBe(1, 'Calendar exists');
+  })
+
+  /* #endregion */
+
 });
