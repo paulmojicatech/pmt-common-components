@@ -13,4 +13,11 @@
       <button mat-button [disabled]="selectedView === 'Day'" color="primary" (click)="selectedView = 'Day'">Day</button>
     </div>
   </div>
+  <div class="main">
+    <ng-container [ngSwitch]="selectedView">
+      <pmt-month-calendar *ngSwitchCase="'Month'"></pmt-month-calendar>
+      <pmt-week-calendar *ngSwitchCase="'Week'"></pmt-week-calendar>
+      <pmt-day-calendar *ngSwitchCase="'Day'"></pmt-day-calendar>
+    </ng-container>
+  </div>
 </div>

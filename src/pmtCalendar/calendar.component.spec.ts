@@ -1,6 +1,9 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { CalendarComponent } from './calendar.component';
+import { MonthCalendarComponent } from './month-calendar.component';
+import { WeekCalendarComponent } from './week-calendar.component';
+import { DayCalendarComponent } from './day-calendar.component';
 
 describe('CalendarComponent', () => {
   let component: CalendarComponent;
@@ -9,7 +12,12 @@ describe('CalendarComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ CalendarComponent ]
+      declarations: [ 
+        CalendarComponent,
+        WeekCalendarComponent,
+        MonthCalendarComponent,
+        DayCalendarComponent
+      ]
     })
     .compileComponents();
   }));
@@ -44,6 +52,7 @@ describe('CalendarComponent', () => {
     expect(weekBtn.length).toBe(1, 'Week button not found');
     expect(dayBtn.length).toBe(1, 'Day button not found');
   });
+
   it('should update the button to disabled in calendar type select section', () => {
     const selectDiv = el.querySelector('div.calendar-type-select');
     const btns = selectDiv.querySelectorAll('button');
@@ -53,5 +62,19 @@ describe('CalendarComponent', () => {
     dayBtn[0].click();
     fixture.detectChanges();
     expect(dayBtn[0].hasAttribute('disabled')).toBeTruthy('Day should be disabled after click');
+  });
+
+  it('should update the type of calendar to display on button click', () => {
+    const selectDiv = el.querySelector('div.calendar-type-select');
+    const btns = selectDiv.querySelectorAll('button');
+    const weekBtn = Array.from(btns).filter(b => b.textContent == 'Week');
+    let monthCalendar = el.querySelectorAll('pmt-month-calendar');
+    expect(monthCalendar.length).toBe(1, 'Month calendar shown by default');
+    weekBtn[0].click();
+    fixture.detectChanges();
+    monthCalendar = el.querySelectorAll('pmt-month-calendar');
+    expect(monthCalendar.length).toBe(0, 'Month calendar should be removed');
+    const weekCalendar = el.querySelectorAll('pmt-week-calendar');
+    expect(weekCalendar.length).toBe(1, 'Week calendar should show after week button press');
   });
 });

@@ -2,10 +2,19 @@ import { NgModule, Injector } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { createCustomElement } from '@angular/elements';
 import { MatButtonModule } from '@angular/material';
+
 import { CalendarComponent } from './calendar.component';
+import { MonthCalendarComponent } from './month-calendar.component';
+import { WeekCalendarComponent } from './week-calendar.component';
+import { DayCalendarComponent } from './day-calendar.component';
 
 @NgModule({
-  declarations: [CalendarComponent],
+  declarations: [
+    CalendarComponent,
+    MonthCalendarComponent,
+    WeekCalendarComponent,
+    DayCalendarComponent
+  ],
   imports: [
     CommonModule,
     MatButtonModule
