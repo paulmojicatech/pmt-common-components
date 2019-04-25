@@ -22,4 +22,12 @@ describe('CalendarComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
+  it('should contain a previous button', () => {
+    const el:HTMLElement = fixture.nativeElement;
+    const navDiv = el.querySelector('div.calendar-navigation');
+    const btns = navDiv.querySelectorAll('button');
+    const prevBtn = Array.from(btns).filter(b => b.textContent == 'Previous');
+    expect(prevBtn.length).toBe(1, 'Previous button not found');
+  });
 });

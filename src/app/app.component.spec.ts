@@ -5,7 +5,7 @@ import { PmtCalendarModule } from '../pmtCalendar/calendar.module';
 
 import { AppComponent } from './app.component';
 
-fdescribe('AppComponent', () => {
+describe('AppComponent', () => {
   let fixture:ComponentFixture<AppComponent>;
   let el:HTMLElement;
 
