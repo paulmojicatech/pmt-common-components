@@ -4,11 +4,13 @@ import { Component, OnInit, ViewEncapsulation } from '@angular/core';
   selector: 'pmt-calendar',
   templateUrl: './calendar.component.html',
   styleUrls: ['./calendar.component.scss'],
-  encapsulation: ViewEncapsulation.Native
+  encapsulation: ViewEncapsulation.Native 
 })
 export class CalendarComponent implements OnInit {
 
   constructor() { }
+
+  selectedView:string = 'Month';
 
   ngOnInit() {
   }

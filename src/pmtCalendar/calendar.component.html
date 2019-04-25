@@ -8,9 +8,9 @@
 
     </div>
     <div class="calendar-type-select">
-      <button mat-button>Month</button>
-      <button mat-button>Week</button>
-      <button mat-button>Day</button>
+      <button mat-button [disabled]="selectedView === 'Month'" color="primary" (click)="selectedView = 'Month'">Month</button>
+      <button mat-button [disabled]="selectedView === 'Week'" color="primary" (click)="selectedView = 'Week'">Week</button>
+      <button mat-button [disabled]="selectedView === 'Day'" color="primary" (click)="selectedView = 'Day'">Day</button>
     </div>
   </div>
 </div>
