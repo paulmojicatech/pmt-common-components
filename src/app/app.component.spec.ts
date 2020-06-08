@@ -1,3 +1,4 @@
+import { PmtAutocompleteModule } from './../pmtAutocomplete/autocomplete.module';
 import { TestBed, async, ComponentFixture } from '@angular/core/testing';
 import { MatButtonModule } from '@angular/material';
 
@@ -16,7 +17,8 @@ describe('AppComponent', () => {
       ],
       imports: [
         MatButtonModule,
-        PmtCalendarModule
+        PmtCalendarModule,
+        PmtAutocompleteModule
       ]
     }).compileComponents();
   }));
