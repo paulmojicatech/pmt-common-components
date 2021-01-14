@@ -1,7 +1,7 @@
 import { NgModule, Injector } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { createCustomElement } from '@angular/elements';
-import { MatButtonModule } from '@angular/material';
+import { MatButtonModule } from '@angular/material/button';
 
 import { CalendarComponent } from './calendar.component';
 import { MonthCalendarComponent } from './month-calendar.component';

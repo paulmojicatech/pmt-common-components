@@ -2,7 +2,7 @@ import { Component, OnChanges, Input, SimpleChanges, ChangeDetectionStrategy, On
 import { Subject, BehaviorSubject } from 'rxjs';
 import { takeUntil } from 'rxjs/operators';
 import { FormBuilder, FormGroup, FormControl } from '@angular/forms';
-import { MatAutocompleteSelectedEvent } from '@angular/material';
+import { MatAutocompleteSelectedEvent } from '@angular/material/autocomplete';
 
 @Component({
   selector: 'pmt-autocomplete',
