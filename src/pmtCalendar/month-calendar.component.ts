@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Month } from './models/calendar.interface';
 
 @Component({
     selector: 'pmt-month-calendar',
@@ -7,9 +8,12 @@ import { Component, OnInit } from '@angular/core';
 })
 
 export class MonthCalendarComponent implements OnInit {
+
+    monthList: string[] = [];
+
     constructor() { }
 
     ngOnInit():void {
-        console.log('MONTH');
+        this.monthList = Object.keys(Month).map(key => Month[key]);
     }
 }

@@ -8,9 +8,9 @@
 
     </div>
     <div class="calendar-type-select">
-      <button mat-button [disabled]="selectedView === 'Month'" color="primary" (click)="selectedView = 'Month'">Month</button>
-      <button mat-button [disabled]="selectedView === 'Week'" color="primary" (click)="selectedView = 'Week'">Week</button>
-      <button mat-button [disabled]="selectedView === 'Day'" color="primary" (click)="selectedView = 'Day'">Day</button>
+      <button mat-button [ngClass]="{'selected': selectedView === 'Month' }" [disabled]="selectedView === 'Month'" color="primary" (click)="selectedView = 'Month'">Month</button>
+      <button mat-button [ngClass]="{'selected': selectedView === 'Week' }" [disabled]="selectedView === 'Week'" color="primary" (click)="selectedView = 'Week'">Week</button>
+      <button mat-button [ngClass]="{'selected': selectedView === 'Day' }" [disabled]="selectedView === 'Day'" color="primary" (click)="selectedView = 'Day'">Day</button>
     </div>
   </div>
   <div class="main">
