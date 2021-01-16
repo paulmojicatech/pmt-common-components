@@ -1,5 +1,5 @@
 import { PmtAutocompleteModule } from './../pmtAutocomplete/autocomplete.module';
-import { TestBed, async, ComponentFixture } from '@angular/core/testing';
+import { TestBed, ComponentFixture, waitForAsync } from '@angular/core/testing';
 import { MatButtonModule } from '@angular/material/button';
 
 import { PmtCalendarModule } from '../pmtCalendar/calendar.module';
@@ -10,7 +10,7 @@ describe('AppComponent', () => {
   let fixture:ComponentFixture<AppComponent>;
   let el:HTMLElement;
 
-  beforeEach(async(() => {
+  beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
       declarations: [
         AppComponent
