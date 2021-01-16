@@ -12,6 +12,8 @@ import { MatAutocompleteSelectedEvent } from '@angular/material/autocomplete';
 })
 export class PmtAutocompleteComponent implements OnChanges, OnInit, OnDestroy {
   @Input() options: { label: string, value: number}[];
+  @Input() placeholder: string;
+
   form: FormGroup;
   sortedOptions$: BehaviorSubject<{ label: string, value: number}[]> = new BehaviorSubject([]);
   unsubscribeSub$: Subject<boolean> = new Subject();
