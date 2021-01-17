@@ -142,6 +142,46 @@
           }
         }
       }
+    },
+    "pmt-ng-materials-components": {
+      "projectType": "library",
+      "root": "projects/pmt-ng-materials-components",
+      "sourceRoot": "projects/pmt-ng-materials-components/src",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:ng-packagr",
+          "options": {
+            "tsConfig": "projects/pmt-ng-materials-components/tsconfig.lib.json",
+            "project": "projects/pmt-ng-materials-components/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "projects/pmt-ng-materials-components/tsconfig.lib.prod.json"
+            }
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/pmt-ng-materials-components/src/test.ts",
+            "tsConfig": "projects/pmt-ng-materials-components/tsconfig.spec.json",
+            "karmaConfig": "projects/pmt-ng-materials-components/karma.conf.js"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/pmt-ng-materials-components/tsconfig.lib.json",
+              "projects/pmt-ng-materials-components/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
     }
   },
   "defaultProject": "pmt-common-components"

@@ -1,10 +1,8 @@
-import { PmtAutocompleteModule } from './../pmtAutocomplete/autocomplete.module';
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
-
-import { PmtCalendarModule } from '../pmtCalendar/calendar.module';
+import { CUSTOM_ELEMENTS_SCHEMA, NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
+import { PmtAutocompleteModule, PmtCalendarModule } from 'pmt-ng-materials-components';
 
 @NgModule({
   declarations: [
@@ -14,6 +12,9 @@ import { AppComponent } from './app.component';
     BrowserModule,
     PmtCalendarModule,
     PmtAutocompleteModule
+  ],
+  schemas: [
+    CUSTOM_ELEMENTS_SCHEMA
   ],
   providers: [],
   bootstrap: [AppComponent]

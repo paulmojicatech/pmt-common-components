@@ -19,9 +19,6 @@ import { DayCalendarComponent } from './day-calendar.component';
     CommonModule,
     MatButtonModule
   ],
-  entryComponents: [
-    CalendarComponent
-  ],
   exports: [
     CalendarComponent
   ]

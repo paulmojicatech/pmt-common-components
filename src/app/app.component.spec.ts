@@ -1,8 +1,8 @@
-import { PmtAutocompleteModule } from './../pmtAutocomplete/autocomplete.module';
+import { PmtAutocompleteModule } from '../../projects/pmt-ng-materials-components/src/lib/pmtAutocomplete/autocomplete.module';
 import { TestBed, ComponentFixture, waitForAsync } from '@angular/core/testing';
 import { MatButtonModule } from '@angular/material/button';
 
-import { PmtCalendarModule } from '../pmtCalendar/calendar.module';
+import { PmtCalendarModule } from '../../projects/pmt-ng-materials-components/src/lib/pmtCalendar/calendar.module';
 
 import { AppComponent } from './app.component';
 
