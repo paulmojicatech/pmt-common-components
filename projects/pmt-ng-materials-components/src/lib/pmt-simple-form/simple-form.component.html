@@ -1,0 +1,17 @@
+<form [formGroup]="simpleFormGroup">
+    <div class="form-group">
+        <div [class]="getFormContainerClass(control.name)" *ngFor="let control of formConfig?.formControls">
+            <div>
+                {{control.label}}
+            </div>
+            <div [ngSwitch]="control.type">
+                <div ngSwitchDefault>
+                    <mat-input [formControlName]="control.name" [type]="control.type"></mat-input>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="action-group">
+
+    </div>
+</form>
