@@ -13,7 +13,8 @@ export enum SimpleFormControlType {
     TEXT = 'TEXT',
     SELECT = 'SELECT',
     NUMBER = 'NUMBER',
-    AUTOCOMPLETE = 'AUTOCOMPLETE'
+    AUTOCOMPLETE = 'AUTOCOMPLETE',
+    PASSWORD = 'PASSWORD'
 }
 
 export interface IValidationRule {

@@ -1,14 +1,15 @@
 <form [formGroup]="simpleFormGroup">
     <div class="form-group">
-        <div [class]="getFormContainerClass(control.name)" *ngFor="let control of formConfig?.formControls">
-            <div>
-                {{control.label}}
-            </div>
-            <div [ngSwitch]="control.type">
-                <div ngSwitchDefault>
-                    <mat-input [formControlName]="control.name" [type]="control.type"></mat-input>
-                </div>
-            </div>
+        <div [class]="getFormContainerClass(control.name)" *ngFor="let control of formControls">
+            <ng-container [ngSwitch]="control.type">
+                <mat-form-field *ngSwitchDefault>
+                    <mat-label>
+                        {{control.label}}
+                    </mat-label>
+                    <input matInput [type]="control.type === 'PASSWORD' ? 'password' : 'text'" [formControlName]="control.name" />
+                </mat-form-field>
+                
+            </ng-container>
         </div>
     </div>
     <div class="action-group">

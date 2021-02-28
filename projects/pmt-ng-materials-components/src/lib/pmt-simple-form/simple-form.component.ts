@@ -12,20 +12,19 @@ import { SimpleFormBuilderService } from './services/simple-form-builder.service
 export class PmtSimpleFormComponent implements OnChanges {
 
   @Input()
-  formConfig: {
-    formControls: ISipmpleFormControl[];
-    formValidators: IValidationRule[];
-    submitBtnText: string;
-  }
+  formControls: ISipmpleFormControl[];
+  @Input()
+  formValidators: IValidationRule[];
 
   simpleFormGroup: FormGroup;
 
   constructor(private _formBuilderSvc: SimpleFormBuilderService) { }
 
   ngOnChanges(ch: SimpleChanges): void {
-    if (!!ch?.formConfig?.currentValue) {
+    if (!!ch?.formControls?.currentValue) {
       if (!this.simpleFormGroup) {
-        const { formControls, formValidators } = ch.formConfig.currentValue;
+        const formControls = ch.formControls.currentValue;
+        const formValidators = ch.formValidators?.currentValue ?? [];
         this.simpleFormGroup = this._formBuilderSvc.buildForm(formControls, formValidators);
       }
     }

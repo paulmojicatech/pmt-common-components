@@ -1,10 +1,20 @@
+<div *ngIf="viewModel$ | async as viewModel">
+    <mat-toolbar color="primary" class="single-row-flex full-screen-width app-container">
+        <div>
+            Paul Mojica Technologies
+        </div>
+        <div>
+            <pmt-autocomplete [formConfig]="viewModel"></pmt-autocomplete>
+        </div>
+    </mat-toolbar>
+    
+    <div class="main-container">
+        <div class="side-panel">
+        </div>
+        <div class="detail-panel">
+            <pmt-simple-form [formControls]="viewModel.formControls"></pmt-simple-form>
+        </div>
+    </div>
+</div>
 
-<mat-toolbar color="primary" class="single-row-flex full-screen-width app-container">
-    <div>
-        Paul Mojica Technologies
-    </div>
-    <div>
-        <pmt-autocomplete></pmt-autocomplete>
-    </div>
-</mat-toolbar>
     
